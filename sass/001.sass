@@ -1,0 +1,90 @@
+// ----
+// Sass (v3.4.21)
+// Compass (v1.0.3)
+// ----
+
+$text-color: #61C3C3
+$primary-color: #D488B3
+$secondary-color: #b0e1e1
+
+body
+  width: 100%
+  height: 600px
+  margin: 0
+  padding: 0
+  top: 0
+  left: 0
+  background: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8)
+
+.wrapper
+  width: 100%
+  height: 100%
+  z-index: -2
+
+  img
+    height: 100%
+    width: auto
+
+.container
+  width: 320px
+  display: block
+  margin-top: 50px
+  margin-bottom: 50px
+  margin-left: calc((100% - 320px)/2)
+  background-color: rgba(255, 255, 255, 0.88)
+  border-radius: 20px
+  padding: 40px
+  z-index: 1
+  position: absolute
+
+
+  .footer
+    margin-top: 20px
+    width: 100%
+    position: relative
+
+button.submit
+  outline: 0
+  padding: 12px
+  border-radius: 24px
+  text-transform: uppercase
+  background-color: $primary-color
+  border: 0
+  color: #eee
+  letter-spacing: 0.05em
+  font-size: 0.8em
+  font-weight: 600
+  width: 90%
+  margin-left: 5%
+  margin-right: 5%
+
+  &:hover
+    background-color: $secondary-color
+
+
+.field
+  display: block
+  width: 90%
+  margin-left: 5%
+  margin-bottom: 20px
+  vertical-align: bottom
+
+  label
+    display: inline
+    z-index: 0
+    position: absolute
+    font-family: sans-serif
+    font-size: 0.7em
+    color: $text-color
+
+  input
+    display: inline
+    width: 100%
+    height: 40px
+    line-height: 40px
+    border: 0
+    outline: 0
+    border-bottom: $secondary-color 1px solid
+    background: transparent
+    z-index: 1
+    vertical-align: baseline
