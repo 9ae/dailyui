@@ -1,3 +1,17 @@
+$left-padding: 10px
+$line1-position: 100px
+$line2-position: 50px
+$space-between: 8px
+
+$text-color: #FFD700
+$ccv-width: 40px
+
+@keyframes cardIn
+  from
+    opacity: 0
+  to
+    opacity: 0.4
+
 body
   background-color: #BCC6CC
 
@@ -5,5 +19,104 @@ body
   display: block
   width: 337px
   height: 213px
-  background-color: #333
-  color: #FFD700
+  color: $text-color
+  border-radius: 10px
+  position: relative
+  background: #4c4c4c
+  background: -moz-linear-gradient(-30deg, #4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%)
+  background: -webkit-linear-gradient(-30deg, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%)
+  background: linear-gradient(-30deg, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%)
+
+  input::placeholder
+    color: #999
+
+  .fullbleed
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+  .content
+    z-index: 1
+
+  input
+    background: transparent
+    border: 0
+    color: $text-color
+    font-size: 13px
+    font-family: monospace
+
+  .card-number
+    width: calc(100% - #{$ccv-width})
+    position: absolute
+    bottom: $line1-position
+    left: $left-padding
+    text-align: left
+
+    input
+      width: 220px
+
+  .ccv
+    position: absolute
+    bottom: $line1-position
+    right: $left-padding
+    width: $ccv-width
+
+    input
+      width: 100%
+      background-color: #555
+      padding-left: $left-padding
+      text-align: justify
+
+  .fullname
+    position: absolute
+    bottom: $line2-position
+    left: $left-padding
+
+    input
+      font-size: 22px
+
+  .expire-date
+    position: absolute
+    bottom: $line2-position + 4px
+    right: $left-padding
+
+    input[name="expmo"]
+      width: 25px
+      text-align: justify
+      position: relative
+      bottom: 0
+
+    input[name="expyr"]
+      width: 50px
+      text-align: justify
+
+  .background
+    z-index: 0
+    padding-left: $left-padding
+    padding-right: $left-padding
+    box-sizing: border-box
+    color: $text-color
+
+    .amex
+      opacity: 0
+      font-size: 64px
+      position: absolute
+      top: $left-padding/2
+      right: $left-padding
+
+      &.show
+        animation: cardIn 1s
+        opacity: 0.4
+
+    .visa
+      opacity: 0
+      font-size: 64px
+      position: absolute
+      top: $left-padding/2
+      right: $left-padding
+
+      &.show
+        opacity: 0.4
+        animation: cardIn 1s

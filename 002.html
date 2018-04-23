@@ -1,10 +1,65 @@
 <html>
 <head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="css/002.css" />
+<script type="text/javascript">
+function onCardNoUpdate(target) {
+  var cardno = target.value;
+  if (parseInt(cardno.charAt(0)) % 2 == 1) {
+    document.getElementById('visa').classList.remove('show');
+    document.getElementById('amex').classList.add('show');
+  } else {
+    document.getElementById('visa').classList.add('show');
+    document.getElementById('amex').classList.remove('show');
+  }
+  var i = 0;
+  var newValue = '';
+  while(i<cardno.length){
+    newValue += (cardno.slice(0,4) + " ");
+    i += 4;
+  }
+  target.value = newValue;
+}
+</script>
 </head>
 <body>
 <div class="card">
-stuff
+  <div class="fullbleed background">
+    <div id="amex" class="amex"><i class="fab fa-cc-amex"></i></div>
+    <div id="visa" class="visa"><i class="fab fa-cc-visa"></i></div>
+  </div>
+  <div class="fullbleed content">
+  <div class="group card-number">
+    <input
+      type="text"
+      name="cardnumber"
+      placeholder="XXXX XXXX XXXX XXXX"
+      onChange="onCardNoUpdate(this)"
+    />
+  </div>
+  <div class="group fullname">
+    <input
+      type="text"
+      name="ccv"
+      placeholder="Your Fullname" />
+  </div>
+  <div class="group expire-date">
+    <input
+      type="text"
+      name="expmo"
+      placeholder="MM" />/
+    <input
+      type="text"
+      name="expyr"
+      placeholder="YYYY" />
+  </div>
+  <div class="group ccv">
+    <input
+      type="text"
+      name="ccv"
+      placeholder="CCV" />
+  </div>
+</div>
 </div>
 </body>
 </html>
