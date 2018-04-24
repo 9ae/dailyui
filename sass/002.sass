@@ -5,6 +5,7 @@ $space-between: 8px
 
 $text-color: #FFD700
 $ccv-width: 40px
+$gradient: -30deg, #4c4c4c 0%, #595959 12%, #606060 25%, #474747 39%, #2c2c2c 50%, #000000 52%, #111111 62%, #1c1c1c 91%, #131313 100%
 
 @keyframes cardIn
   from
@@ -23,9 +24,11 @@ body
   border-radius: 10px
   position: relative
   background: #4c4c4c
-  background: -moz-linear-gradient(-30deg, #4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%)
-  background: -webkit-linear-gradient(-30deg, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%)
-  background: linear-gradient(-30deg, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%)
+  margin: 50px
+  box-sizing: border-box
+  background: -moz-linear-gradient($gradient)
+  background: -webkit-linear-gradient($gradient)
+  background: linear-gradient($gradient)
 
   input::placeholder
     color: #999
@@ -46,6 +49,7 @@ body
     color: $text-color
     font-size: 13px
     font-family: monospace
+    outline: 0
 
   .card-number
     width: calc(100% - #{$ccv-width})
@@ -65,7 +69,7 @@ body
 
     input
       width: 100%
-      background-color: #555
+      background-color: #626262
       padding-left: $left-padding
       text-align: justify
 
@@ -98,6 +102,31 @@ body
     padding-right: $left-padding
     box-sizing: border-box
     color: $text-color
+    isolation: isolate
+    overflow: hidden
+
+    .circle
+      position: absolute
+      background-color: #1c1c1c
+      opacity: 0.6
+      border-radius: 50%
+      display: block
+      mix-blend-mode: exclusion
+
+      &.mark-1
+        z-index: 1
+        width: 160px
+        height: 160px
+        right: 40px
+        bottom: -20px
+
+      &.mark-2
+        z-index: 2
+        width: 110px
+        height: 110px
+        right: -18px
+        bottom: 25px
+
 
     .amex
       opacity: 0
