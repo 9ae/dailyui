@@ -1,0 +1,39 @@
+$color-black: #060102
+$color-white: #f3f3f3
+$color-grey: #ada1a5
+$color-action: #dc3d58
+
+$top-margin: 50px
+$hero-row-size: 150px
+
+body
+  background-color: $color-grey
+  margin: 0
+  padding: 0
+
+.hero
+  width: 100%
+  background-color: $color-black
+  display: grid
+  grid-template-columns: 50% 50%
+  grid-template-rows: $top-margin $hero-row-size $hero-row-size $hero-row-size
+
+  .image-wrapper
+    grid-column-start: 1
+    grid-column-end: 2
+    grid-row-start: 2
+    grid-row-end: 5
+
+    img
+      height: 100%
+      width: auto
+
+  .content
+    grid-column-start: 2
+    grid-column-end: 3
+    grid-row-start: 2
+    grid-row-end: 5
+    text-align: center
+
+    img.title
+      width: 300px
