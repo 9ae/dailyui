@@ -1,0 +1,131 @@
+@charset "UTF-8";
+body {
+  background-color: #e8d9de;
+  margin: 0;
+  padding: 0;
+  font-family: "Oswald", sans-serif;
+  font-weight: 300; }
+
+h1, h2, h3, h4, h5 {
+  font-family: "Great Vibes", cursive;
+  letter-spacing: 0.1rem;
+  font-weight: normal; }
+
+a, a:active, a:hover, a:visited {
+  color: #dc3d58; }
+
+.hero {
+  width: 100%;
+  height: auto;
+  background-color: #060102;
+  background-image: url("../images/003_hero.jpg");
+  background-position: 0 250px;
+  background-repeat: no-repeat;
+  background-size: 100% auto; }
+  @media (min-width: 800px) {
+    .hero {
+      height: 100%;
+      background-size: auto 100%;
+      background-position: 0 50px; } }
+  .hero .content {
+    box-sizing: border-box;
+    text-align: center;
+    color: #f3f3f3;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); }
+    .hero .content blockquote {
+      margin: 30px auto;
+      width: 80%;
+      color: #e8d9de; }
+      @media (min-width: 800px) {
+        .hero .content blockquote {
+          width: 500px;
+          margin: 60px auto; } }
+      .hero .content blockquote p {
+        margin: 0; }
+      .hero .content blockquote .quote {
+        font-size: 1rem;
+        line-height: 1.2rem;
+        text-align: left;
+        letter-spacing: 0.04rem; }
+        .hero .content blockquote .quote::before {
+          content: '"';
+          font-size: 1.5rem;
+          margin-right: 4px; }
+        .hero .content blockquote .quote::after {
+          content: '"';
+          font-size: 1.5rem;
+          margin-left: 4px; }
+        @media (min-width: 800px) {
+          .hero .content blockquote .quote {
+            font-size: 1.2rem;
+            line-height: 1.4rem; } }
+      .hero .content blockquote .source {
+        text-align: right;
+        font-size: 1rem;
+        font-style: italic;
+        margin-top: 8px;
+        letter-spacing: 0.07rem; }
+        @media (min-width: 800px) {
+          .hero .content blockquote .source {
+            font-family: "Great Vibes", cursive;
+            font-size: 1.5rem;
+            font-style: normal; } }
+        .hero .content blockquote .source::before {
+          content: "—";
+          margin-right: 4px; }
+    .hero .content img {
+      margin-top: 25px;
+      width: 300px; }
+    .hero .content a.cta {
+      display: block;
+      background-color: #dc3d58;
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: #f3f3f3;
+      border: 0;
+      outline: 0;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      margin-top: 30px;
+      font-weight: 500;
+      letter-spacing: 0.15rem;
+      width: 120px;
+      text-decoration: none;
+      margin-left: auto;
+      margin-right: auto; }
+      .hero .content a.cta:hover {
+        background-color: #ad1f37; }
+
+.row .wrapper {
+  margin: 50px auto;
+  width: 100%; }
+  @media (min-width: 800px) {
+    .row .wrapper {
+      width: 800px; } }
+  .row .wrapper img.book {
+    display: none; }
+    @media (min-width: 800px) {
+      .row .wrapper img.book {
+        vertical-align: top;
+        width: 300px;
+        display: inline-block; } }
+  .row .wrapper .summary {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: block;
+    color: #060102; }
+    @media (min-width: 800px) {
+      .row .wrapper .summary {
+        width: 400px;
+        display: inline-block;
+        margin-left: 80px;
+        margin-right: 0; } }
+    .row .wrapper .summary p:first-child {
+      margin-top: 0; }
+    .row .wrapper .summary a:active, .row .wrapper .summary a:hover {
+      color: #ad1f37; }
+
+/*# sourceMappingURL=003.css.map */
